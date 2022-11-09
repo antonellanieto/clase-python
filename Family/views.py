@@ -4,9 +4,10 @@ from .models import Familiares
 
 
 def pagina_principal(request):
-    familiar = Familiares(nombre='Maria Cecilia', apellido='Casola', nacimiento='1969-01-12',relacion='Madre')
+    familiar = Familiares('','María Cecilia', 'Casola', 55, '1966-12-01', 'Madre')
+    familiar2 = Familiares('','Martina', 'Nieto', 19, '2022-11-23', 'Hermana')
 
 
  
 
-    return render(request, 'index.html', {'nombre': 'María Cecilia', 'apellido': 'Casola', 'nacimiento': '1969-01-12', 'relacion': 'Madre'})
+    return render(request, 'index.html', {'objetos': [familiar, familiar2]})
